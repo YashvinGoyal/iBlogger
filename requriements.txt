@@ -1,0 +1,4 @@
+django==3.0
+#pip intall -r requriements.txt
+#safe used in html template is use to acess or use html in django admin
+#tiny mce editor use karo for text 

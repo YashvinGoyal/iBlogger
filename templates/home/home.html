@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block homeactive%} active {%endblock homeactive%}
+
+<style>
+
+  #border{
+    border: 3px;
+    border-color: black;
+    color: aqua;
+    background: crimson;
+  }
+
+
+</style>
+{% block body %}
+<div class="container">
+    <div class="jumbotron my-3">
+      <h1 class="display-4">Welcome to iBloger!</h1>
+      <p class="lead">This is a simple Blog website,Read the amazing blogs which get You crazy and Boost your Knowledge !!</p>
+      <hr class="my-4">
+      <b><p>It is best Platform for Codeing realated Blogs by very Talented Coders of World !!</p></b>
+      <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
+      </div>
+    </div>
+    <div class="container">
+        <h2>Popular Blogposts:</h2>
+        {%for post in allposts%}
+        <div id="border" style=" background:rgb(222, 226, 230);border-color:black "  class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative ">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">{{post.title}}</strong>
+                  <h4 class="mb-0">Author-  {{post.author}}</h4>
+                  <div class="mb-1 text-muted">{{post.datetime}}</div>
+                  <p class="card-text mb-auto">{{post.content|safe|truncatechars:150}}</p>
+                  <a href="/blog/{{post.slug}}" class="stretched-link">Continue reading</a>
+                </div>
+           <div class="col-auto d-none d-lg-block">
+                  <!-- <img class="bd-placeholder-img" width="200" height="250" src="static/imgblog/user.png"> -->
+                </div>     
+              </div>
+              {%endfor%}
+           </div
+
+{%endblock%}
