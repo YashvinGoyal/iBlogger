@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'icoder.urls'
+ROOT_URLCONF = 'iBlogger.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'icoder.wsgi.application'
+WSGI_APPLICATION = 'iBlogger.wsgi.application'
 
 
 # Database
